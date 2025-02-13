@@ -1,16 +1,14 @@
 # Goodcab-analysis-project
 
 🚖 Goodcabs - Unlocking Data-Driven Growth! 🚀
+
 📌 Overview
-Welcome to my journey of completing Codebasics Resume Project Challenge #13, where I was tasked with analyzing and providing strategic insights to Goodcabs, a rapidly growing cab service in India’s tier-2 cities. Through this project, I dove deep into the Transportation & Mobility sector, focusing on enhancing growth and improving passenger satisfaction using data.
+This project analyzes and provides strategic insights for Goodcabs, a rapidly growing cab service in India’s tier-2 cities. By leveraging data, I explored key business metrics to enhance growth and improve passenger satisfaction.
 
 Goodcabs, operating in 10 tier-2 cities, supports local drivers and aims to offer better experiences to passengers. With ambitious performance goals for 2024, the company needed immediate insights to drive data-driven decision-making and boost performance.
 
-🔗 Live Dashboard: https://shorturl.at/iS66W
+Presentation: (https://www.canva.com/design/DAGefrRxsUg/qWyDdxt_rjj0scDQKihKrw/view?utm_content=DAGefrRxsUg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6c4ff0b3a8)
 
-🎥 Video Presentation: https://youtu.be/PxxyXPoLlNo
-
-𝐂𝐡𝐞𝐜𝐤 𝐨𝐮𝐭 𝐦𝐨𝐫𝐞 𝐩𝐫𝐨𝐣𝐞𝐜𝐭𝐬 𝐨𝐧 𝐦𝐲 𝐩𝐨𝐫𝐭𝐟𝐨𝐥𝐢𝐨: https://shorturl.at/RKTBj
 
 📜 Problem Statement
 Goodcabs’ Chief of Operations needed a comprehensive analysis of key performance metrics for trip volume, passenger satisfaction, repeat passenger rate, trip distribution, and more. With the task of analyzing and reporting this critical data, the goal was to provide actionable insights that would help Goodcabs hit its 2024 growth targets and improve passenger experience.
