@@ -88,7 +88,9 @@ Similarly, analyse the RPR% by month across all cities and identify the months w
 📌 Ad hoc requests:
 Q1 Generate a report that displays the total trips, average fare per km, average fare per trip, and the percentage contribution of each city’s trips to the overall trips. This report will help in assessing trip volume, pricing efficiency, and each city’s contribution to the overall trip count.
 
+
 Query
+
 
     with cte as (
   Select
@@ -109,6 +111,8 @@ select
   round(average_fare_per_trip, 2) as average_fare_per_trip,
   round(contribution_to_total_trips, 2) as contribution_to_total_trips
 from cte;
+
+
 
 Q2 Generate a report that evaluates the target performance for trips at the monthly and city level. For each city and month, compare the actual total trips with the target trips and categorize the performance as follows:
 
