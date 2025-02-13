@@ -114,6 +114,8 @@ from cte;
 
 
 
+
+
 Q2 Generate a report that evaluates the target performance for trips at the monthly and city level. For each city and month, compare the actual total trips with the target trips and categorize the performance as follows:
 
 -- If actual trips are greater than target trips, mark it as "Above Target". -- If actual trips are less than or equal to target trips, mark it as "Below Target".
