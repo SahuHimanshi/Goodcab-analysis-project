@@ -79,10 +79,9 @@ Analyse the Repeat Passenger Rate (RPR%) for each city across the six-month peri
 
 Similarly, analyse the RPR% by month across all cities and identify the months with the highest and lowest repeat passenger rates. This will help to pinpoint any seasonal patterns or months with higher repeat passenger loyalty.
 
-image (https://github.com/user-attachments/assets/4b00a0bf-8cb0-4644-bcde-dd9861f04d0a)
-
-image (https://github.com/user-attachments/assets/adde57a7-fb4e-49ce-a49c-97021e16c41b)
-
+![Repeat Passenger %] (https://github.com/user-attachments/assets/4b00a0bf-8cb0-4644-bcde-dd9861f04d0a)
+![Repeat Passenger %] (https://github.com/user-attachments/assets/adde57a7-fb4e-49ce-a49c-97021e16c41b)
+![Repeat Passenger %]
 
 📌 Ad hoc requests:
 Q1 Generate a report that displays the total trips, average fare per km, average fare per trip, and the percentage contribution of each city’s trips to the overall trips. This report will help in assessing trip volume, pricing efficiency, and each city’s contribution to the overall trip count.
