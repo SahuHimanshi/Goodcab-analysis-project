@@ -80,7 +80,10 @@ Analyse the Repeat Passenger Rate (RPR%) for each city across the six-month peri
 Similarly, analyse the RPR% by month across all cities and identify the months with the highest and lowest repeat passenger rates. This will help to pinpoint any seasonal patterns or months with higher repeat passenger loyalty.
 
 ![Repeat Passenger %] (https://github.com/user-attachments/assets/4b00a0bf-8cb0-4644-bcde-dd9861f04d0a).
-![Repeat Passenger %] (https://github.com/user-attachments/assets/adde57a7-fb4e-49ce-a49c-97021e16c41b).
+
+![Repeat Passenger %](https://github.com/user-attachments/assets/d72fb2f5-74c1-44d2-9ba1-e279f7ecd317).
+.
+
 ![Repeat Passenger %]
 
 📌 Ad hoc requests:
