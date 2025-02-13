@@ -61,27 +61,28 @@ Calculate the average passenger and driver ratings for each city, segmented by p
 
 For each city, identify the month with the highest total trips (peak demand) and the month with the lowest total trips (low demand). This analysis will help Goodcabs understand seasonal patterns and adjust resources accordingly.
 
-image
+![Demands](https://github.com/user-attachments/assets/05c89b15-d316-40b8-99de-ec9679b0d242)
 
 Compare the total trips taken on weekdays versus weekends for each city over the six-month period. Identify cities with a strong preference for either weekend or weekday trips to understand demand variations.
 
-image
+![Day type](https://github.com/user-attachments/assets/2d880c4f-3faa-47f6-bd74-b0fc87939a18)
 
 Analyse the frequency of trips taken by repeat passengers in each city (e.g., % of repeat passengers taking 2 trips, 3 trips, etc.). Identify which cities contribute most to higher trip frequencies among repeat passengers, and examine if there are distinguishable patterns between tourism-focused and business-focused cities.
 
-image
+![Repeat Passenger](https://github.com/user-attachments/assets/170cb91d-85ff-4ebc-9874-47bfa3cbcddf)
 
 For each city, evaluate monthly performance against targets for total trips, new passengers, and average passenger ratings from targets_db. Determine if each metric met, exceeded, or missed the target, and calculate the percentage difference. Identify any consistent patterns in target achievement, particularly across tourism versus business-focused cities.
 
-image
+
 
 Analyse the Repeat Passenger Rate (RPR%) for each city across the six-month period. Identify the top 2 and bottom 2 cities based on their RPR% to determine which locations have the strongest and weakest rates.
 
 Similarly, analyse the RPR% by month across all cities and identify the months with the highest and lowest repeat passenger rates. This will help to pinpoint any seasonal patterns or months with higher repeat passenger loyalty.
 
-image
+image (https://github.com/user-attachments/assets/4b00a0bf-8cb0-4644-bcde-dd9861f04d0a)
 
-image
+image (https://github.com/user-attachments/assets/adde57a7-fb4e-49ce-a49c-97021e16c41b)
+
 
 📌 Ad hoc requests:
 Q1 Generate a report that displays the total trips, average fare per km, average fare per trip, and the percentage contribution of each city’s trips to the overall trips. This report will help in assessing trip volume, pricing efficiency, and each city’s contribution to the overall trip count.
