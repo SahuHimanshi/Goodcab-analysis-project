@@ -14,86 +14,31 @@ Goodcabs, operating in 10 tier-2 cities, supports local drivers and aims to offe
 📜 Problem Statement
 Goodcabs’ Chief of Operations needed a comprehensive analysis of key performance metrics for trip volume, passenger satisfaction, repeat passenger rate, trip distribution, and more. With the task of analyzing and reporting this critical data, the goal was to provide actionable insights that would help Goodcabs hit its 2024 growth targets and improve passenger experience.
 
-Goal & Purpose
-Key Objectives
+🎯 Goal & Purpose
 
-1️⃣ Identify patterns in revenue, trips, passengers, and ratings.
+🔹 Identify trends in trips, passenger behavior, and fare patterns.
+Analyzed trip volume, passenger segmentation (new vs. repeat), and fare distribution to uncover key insights.
 
-Delve into trip volume trends and passenger behavior to recognize growth areas.
+🔹 Assess city-wise performance to highlight growth opportunities.
+Determined top-performing and underperforming cities based on trip volume, revenue, and passenger satisfaction.
 
-2️⃣ Analyze city-specific performance to find growth opportunities.
+🔹 Establish correlations between trip distance, fare, and passenger retention.
+Examined fare efficiency, repeat passenger rates, and city-wise trends to understand their impact on business growth.
 
-Identify which cities are performing well and which need attention to meet the growth targets.
+🔹 Support data-driven decision-making with structured SQL insights.
+Provided actionable recommendations by extracting insights using SQL queries to answer business-critical questions.
 
-3️⃣ Establish correlations between customer behavior, trip distance, and fare.
+⚙️ Approach & Tools
 
-Investigate how factors like trip distance and fare affect passenger satisfaction and repeat trips.
+🔹 Data Cleaning & Exploration
+Processed raw data to ensure consistency and accuracy before analysis.
 
-4️⃣ Enhance the decision-making process with interactive dashboards.
+🔹 SQL-Based Analysis
+Executed queries to evaluate trip demand, repeat passenger behavior, peak-demand months, and fare distribution.
 
-Design an intuitive and self-explanatory dashboard to make data easy to interpret for decision-makers.
+🔹 Insight Extraction & Recommendations
+Derived key business insights to optimize performance, enhance customer satisfaction, and improve revenue strategies.
 
-Approach & Tools
-1️⃣ Data Cleaning & Analysis
-
-Explored and cleaned the provided dataset to ensure the clarity of insights. Addressed business questions using SQL and Power BI for data processing and visualization.
-
-2️⃣ Dashboard Creation
-
-Designed an interactive dashboard to display key metrics and city-wise insights, making the data easily accessible and actionable for stakeholders.
-
-3️⃣ Insights & Recommendations
-
-Delivered data-driven strategies to improve operations, enhance passenger satisfaction, and support growth initiatives.
-
-🛠️ Tools & Technologies
-SQL 🗃️: For data extraction and ad-hoc analysis.
-
-Power Query 🔄: For data cleaning and transformation.
-
-Power BI 📊: For interactive dashboard creation.
-
-Canva 🎨: For presenting insights to stakeholders.
-
-Flaticon 🖼️: For icons.
-
-Colorhunt 🎨: For selecting appealing color schemes.
-
-Key Learnings
-✔️ SQL & Power BI: Improved skills in data manipulation, querying, and visualization.
-
-✔️ Real-world Problem Solving: Applied data analysis to solve business problems and provide actionable insights.
-
-✔️ Transportation & Mobility Sector Insights: Gained deeper knowledge of the cab service industry and how data can be leveraged to drive growth.
-
-Data Modeling
-Here you can check the Data Model which is used for this project.
-
-Output :image
-
-Dashboard Overview:
-Home Page:
-image
-
-Revenue Page:
-This page provides insights into revenue trends, showcasing key metrics such as Total Revenue, Total Trips, Average Fare per Trip, Average Fare per Kilometer, and Total Passengers. It highlights month-wise revenue trends, revenue distribution across cities, trip and revenue contributions by city, revenue patterns by week type, and a comparison of revenue from new and repeated trips.
-
-image
-
-Passenger page:
-This page provides an in-depth analysis of passenger metrics, including Total Passengers, New Passengers, Repeated Passengers, Average Passenger Rating, and Average Driver Rating. It showcases city-wise distribution of new and repeated passengers, comparative charts for driver and passenger ratings, frequency analysis by city, and month- and city-wise passenger growth trends.
-
-image
-
-Performance page:
-This page provides key metrics such as Average Revenue, Maximum Revenue, Minimum Revenue, Average Passenger Rating, and Average Driver Rating. It includes tables comparing Total Trips with Target Trips and analyzing the percentage of targets achieved. Insights are presented for New Passengers and Repeat Passengers, along with comparisons of Average Passenger Ratings against Target Ratings."
-
-image
-
-Target page:
-This page highlights key performance metrics with charts showcasing the top three most-traveled cities and the bottom three least-traveled cities. It provides insights into RPR growth by identifying the top two and bottom two cities. Additional analysis includes new vs. repeated passengers across cities with RPR growth trends, peak vs. low-demand months by city, weekend vs. weekday trip patterns, and fare efficiency comparisons across cities.
-
-image
 
 Primary Analysis:
 Identify the top 3 and bottom 3 cities by total trips over the entire analysis period.
