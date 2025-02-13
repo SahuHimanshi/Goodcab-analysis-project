@@ -71,12 +71,6 @@ Analyse the frequency of trips taken by repeat passengers in each city (e.g., % 
 
 ![Repeat Passenger](https://github.com/user-attachments/assets/170cb91d-85ff-4ebc-9874-47bfa3cbcddf)
 
-For each city, evaluate monthly performance against targets for total trips, new passengers, and average passenger ratings from targets_db. Determine if each metric met, exceeded, or missed the target, and calculate the percentage difference. Identify any consistent patterns in target achievement, particularly across tourism versus business-focused cities.
-
-![Monthly Target](https://github.com/user-attachments/assets/7b300892-26c5-4d95-904c-b5b88c1ddb13)
-![Monthly Target](https://github.com/user-attachments/assets/bb16163c-01ff-41bb-8463-df3fb8dc5a9b)
-
-
 
 Analyse the Repeat Passenger Rate (RPR%) for each city across the six-month period. Identify the top 2 and bottom 2 cities based on their RPR% to determine which locations have the strongest and weakest rates.
 
@@ -96,20 +90,26 @@ Q1 Generate a report that displays the total trips, average fare per km, average
 
 Query
 
-        SELECT 
-    c.city_name AS 'City_Name',
-    COUNT(ft.trip_id) AS 'Total_Trips',
-    ROUND(SUM(ft.fare_amount) / SUM(ft.distance_travelled_km), 2) AS 'Avg. Fare/Km',
-    ROUND(SUM(ft.fare_amount) / COUNT(ft.trip_id), 2) AS 'Avg. Fare/Trip',
-    ROUND(COUNT(ft.trip_id) * 100.0 / (SELECT COUNT(*) FROM fact_trips), 2) AS '%_Contribution_to_Total_Trips'
-FROM 
-    fact_trips ft
-INNER JOIN 
-    dim_city c ON c.city_id = ft.city_id
-GROUP BY 
-    c.city_id, c.city_name
-ORDER BY 
-    COUNT(ft.trip_id) DESC;
+    with cte as (
+  Select
+    city_name,
+    count(distinct trip_id) as total_trips,
+    avg(fare_amount / distance_travelled_km) as average_fare_per_km,
+    sum(fare_amount) / count(distinct trip_id) as average_fare_per_trip,
+    (count(distinct trip_id) / (select count(distinct trip_id) from fact_trips)) * 100 as contribution_to_total_trips
+  from dim_city c
+  join fact_trips f
+    on c.city_id = f.city_id
+  group by city_name
+)
+select
+  city_name,
+  total_trips,
+  round(average_fare_per_km, 2) as average_fare_per_km,
+  round(average_fare_per_trip, 2) as average_fare_per_trip,
+  round(contribution_to_total_trips, 2) as contribution_to_total_trips
+from cte;
+
 Q2 Generate a report that evaluates the target performance for trips at the monthly and city level. For each city and month, compare the actual total trips with the target trips and categorize the performance as follows:
 
 -- If actual trips are greater than target trips, mark it as "Above Target". -- If actual trips are less than or equal to target trips, mark it as "Below Target".
@@ -118,31 +118,22 @@ Q2 Generate a report that evaluates the target performance for trips at the mont
 
 Query
 
-        SELECT 
-    c.city_name AS 'City_Name', 
-    MONTHNAME(ft.date) AS 'Month_Name', 
-    COUNT(ft.trip_id) AS 'Actual_Trips', 
-    tt.total_target_trips AS 'Target_Trips',
-    CASE 
-        WHEN COUNT(ft.trip_id) > tt.total_target_trips THEN 'Above Target'
-        WHEN COUNT(ft.trip_id) <= tt.total_target_trips THEN 'Below Target'
-    END AS 'Performance_Status',
-    ROUND((COUNT(ft.trip_id) - tt.total_target_trips) * 100.0 / tt.total_target_trips, 2) AS '%_Difference'
-FROM 
-    trips_db.fact_trips ft
-INNER JOIN 
-    targets_db.monthly_target_trips tt 
-    ON tt.city_id = ft.city_id AND MONTH(tt.month) = MONTH(ft.date)
-INNER JOIN 
-    trips_db.dim_city c 
-    ON c.city_id = ft.city_id
-INNER JOIN 
-    trips_db.dim_date d 
-    ON d.date = ft.date
-GROUP BY 
-    ft.city_id, MONTH(ft.date), c.city_name, tt.total_target_trips
-ORDER BY 
-    c.city_name, MONTH(ft.date);
+       SELECT
+    c.city_name,
+    date_format(trp.date, '%M') AS month_name,
+    COUNT(trip_id) AS actual_trips,
+    mt.total_target_trips AS target_trips,
+    CASE
+        WHEN COUNT(trip_id) > mt.total_target_trips THEN "Above Target"
+        WHEN COUNT(trip_id) <= mt.total_target_trips THEN "Below Target"
+    END AS performance_status,
+    CONCAT(ROUND(((COUNT(trip_id) - mt.total_target_trips) * 100 / COUNT(trip_id)), 2), '%') AS pct_difference
+FROM fact_trips trp
+JOIN dim_city c ON trp.city_id = c.city_id
+JOIN monthly_target_trips AS mt ON trp.city_id = mt.city_id AND date_format(trp.date, '%M') = date_format(mt.month, '%M')
+GROUP BY trp.city_id, date_format(trp.date, '%M'), mt.total_target_trips
+ORDER BY month_name;
+
 
 Q3 Generate a report that shows the percentage distribution of repeat passengers by the number of trips they have taken in each city. Calculate the percentage of repeat passengers who took 2 trips, 3 trips, and so on, up to 10 trips.
 
@@ -150,8 +141,7 @@ Q3 Generate a report that shows the percentage distribution of repeat passengers
 
 Query
 
-        SET SQL_MODE = ' ';
-
+       
 SELECT 
     c.city_name, 
     ROUND((SUM(CASE WHEN drt.trip_count = 2 THEN drt.repeat_passenger_count ELSE 0 END) / 
@@ -184,7 +174,8 @@ Q4 Generate a report that calculates the total new passengers for each city and 
 
 Query
 
-        WITH RankedCities AS (
+           
+             WITH RankedCities AS (
     SELECT 
         c.city_name, 
         SUM(fps.new_passengers) AS Passenger,
@@ -217,8 +208,8 @@ Q5 Generate a report that identifies the month with the highest revenue for each
 
 Query
 
-        SET SQL_MODE = ' ';
-SELECT 
+
+ SELECT 
     city_name, 
     Higest_revenue_month, 
     Revenue, 
@@ -250,7 +241,7 @@ Q6 Generate a report that calculates two metrics:
 
 Query
 
-        SELECT 
+         SELECT 
     city.city_name, 
     MONTHNAME(fp.month) AS 'month_name', 
     fp.total_passengers AS 'total_passengers', 
@@ -271,3 +262,4 @@ INNER JOIN (
     GROUP BY 
         city_id
 ) city_rates ON city_rates.city_id = fp.city_id;
+
