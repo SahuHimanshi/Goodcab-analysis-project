@@ -86,13 +86,13 @@ Similarly, analyse the RPR% by month across all cities and identify the months w
 
 
 📌 Ad hoc requests:
-Q1 Generate a report that displays the total trips, average fare per km, average fare per trip, and the percentage contribution of each city’s trips to the overall trips. This report will help in assessing trip volume, pricing efficiency, and each city’s contribution to the overall trip count.
 
+Q1 Generate a report that displays the total trips, average fare per km, average fare per trip, and the percentage contribution of each city’s trips to the overall trips. This report will help in assessing trip volume, pricing efficiency, and each city’s contribution to the overall trip count.
 
 Query
 
-
-    with cte as (
+```
+ with cte as (
   Select
     city_name,
     count(distinct trip_id) as total_trips,
@@ -112,6 +112,7 @@ select
   round(contribution_to_total_trips, 2) as contribution_to_total_trips
 from cte;
 
+```
 
 
 
@@ -124,7 +125,9 @@ Q2 Generate a report that evaluates the target performance for trips at the mont
 
 Query
 
-       SELECT
+```
+
+ SELECT
     c.city_name,
     date_format(trp.date, '%M') AS month_name,
     COUNT(trip_id) AS actual_trips,
@@ -140,6 +143,7 @@ JOIN monthly_target_trips AS mt ON trp.city_id = mt.city_id AND date_format(trp.
 GROUP BY trp.city_id, date_format(trp.date, '%M'), mt.total_target_trips
 ORDER BY month_name;
 
+```
 
 Q3 Generate a report that shows the percentage distribution of repeat passengers by the number of trips they have taken in each city. Calculate the percentage of repeat passengers who took 2 trips, 3 trips, and so on, up to 10 trips.
 
@@ -147,8 +151,9 @@ Q3 Generate a report that shows the percentage distribution of repeat passengers
 
 Query
 
-       
-SELECT 
+```
+
+    SELECT 
     c.city_name, 
     ROUND((SUM(CASE WHEN drt.trip_count = 2 THEN drt.repeat_passenger_count ELSE 0 END) / 
            (SELECT SUM(repeat_passenger_count) FROM dim_repeat_trip_distribution)) * 100, 2) AS '2_trips_%',
@@ -175,13 +180,16 @@ INNER JOIN
 GROUP BY 
     drt.city_id, c.city_name;
 
+```
 
 Q4 Generate a report that calculates the total new passengers for each city and ranks them based on this value. Identify the top 3 cities with the highest number of new passengers as well as the bottom 3 cities with the lowest number of new passengers, categorizing them as "Top 3" or "Bottom 3" accordingly.
 
 Query
 
-           
-             WITH RankedCities AS (
+```
+
+    WITH RankedCities AS
+ (
     SELECT 
         c.city_name, 
         SUM(fps.new_passengers) AS Passenger,
@@ -208,12 +216,13 @@ WHERE
 ORDER BY 
     City_category, Passenger DESC;
 
-
+```
 
 Q5 Generate a report that identifies the month with the highest revenue for each city. For each city, display the month_name, the revenue amount for that month, and the percentage contribution of that month’s revenue to the city’s total revenue.
 
 Query
 
+```
 
  SELECT 
     city_name, 
@@ -237,6 +246,7 @@ FROM (
 WHERE revenue_rank = 1;
 
 
+```
 
 
 Q6 Generate a report that calculates two metrics:
@@ -246,6 +256,8 @@ Q6 Generate a report that calculates two metrics:
 -- City-wide Repeat Passenger Rate: Calculate the overall repeat passenger rate for each city, considering all passengers across months.
 
 Query
+
+```
 
          SELECT 
     city.city_name, 
@@ -269,3 +281,4 @@ INNER JOIN (
         city_id
 ) city_rates ON city_rates.city_id = fp.city_id;
 
+```
