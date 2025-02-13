@@ -2,10 +2,12 @@
 
 🚖 Goodcabs - Unlocking Data-Driven Growth! 🚀
 
+
 📌 Overview
 This project analyzes and provides strategic insights for Goodcabs, a rapidly growing cab service in India’s tier-2 cities. By leveraging data, I explored key business metrics to enhance growth and improve passenger satisfaction.
 
 Goodcabs, operating in 10 tier-2 cities, supports local drivers and aims to offer better experiences to passengers. With ambitious performance goals for 2024, the company needed immediate insights to drive data-driven decision-making and boost performance.
+
 
 📑 **Project Presentation:** [Here](https://www.canva.com/design/DAGefrRxsUg/qWyDdxt_rjj0scDQKihKrw/view?utm_content=DAGefrRxsUg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6c4ff0b3a8)
 
@@ -13,6 +15,7 @@ Goodcabs, operating in 10 tier-2 cities, supports local drivers and aims to offe
 
 📜 Problem Statement
 Goodcabs’ Chief of Operations needed a comprehensive analysis of key performance metrics for trip volume, passenger satisfaction, repeat passenger rate, trip distribution, and more. With the task of analyzing and reporting this critical data, the goal was to provide actionable insights that would help Goodcabs hit its 2024 growth targets and improve passenger experience.
+
 
 
 🎯 Goal & Purpose
@@ -30,6 +33,7 @@ Examined fare efficiency, repeat passenger rates, and city-wise trends to unders
 Provided actionable recommendations by extracting insights using SQL queries to answer business-critical questions.
 
 
+
 ⚙️ Approach & Tools
 
 🔹 Data Cleaning & Exploration
@@ -40,6 +44,7 @@ Executed queries to evaluate trip demand, repeat passenger behavior, peak-demand
 
 🔹 Insight Extraction & Recommendations
 Derived key business insights to optimize performance, enhance customer satisfaction, and improve revenue strategies.
+
 
 
 Primary Analysis:
