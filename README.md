@@ -14,6 +14,7 @@ Goodcabs, operating in 10 tier-2 cities, supports local drivers and aims to offe
 📜 Problem Statement
 Goodcabs’ Chief of Operations needed a comprehensive analysis of key performance metrics for trip volume, passenger satisfaction, repeat passenger rate, trip distribution, and more. With the task of analyzing and reporting this critical data, the goal was to provide actionable insights that would help Goodcabs hit its 2024 growth targets and improve passenger experience.
 
+
 🎯 Goal & Purpose
 
 🔹 Identify trends in trips, passenger behavior, and fare patterns.
@@ -27,6 +28,7 @@ Examined fare efficiency, repeat passenger rates, and city-wise trends to unders
 
 🔹 Support data-driven decision-making with structured SQL insights.
 Provided actionable recommendations by extracting insights using SQL queries to answer business-critical questions.
+
 
 ⚙️ Approach & Tools
 
@@ -43,7 +45,8 @@ Derived key business insights to optimize performance, enhance customer satisfac
 Primary Analysis:
 Identify the top 3 and bottom 3 cities by total trips over the entire analysis period.
 
-image
+![Top Product](https://github.com/user-attachments/assets/29dd1d51-8418-4f27-83b8-945e0f1d59e6)
+![Bottom product](https://github.com/user-attachments/assets/6dcb8aae-9cb1-489f-af16-e975cacbb3cd)
 
 Calculate the average fare per trip for each city and compare it with the city's average trip distance. Identify the cities with the highest and lowest average fare per trip to assess pricing efficiency across locations.
 
