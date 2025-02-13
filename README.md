@@ -73,6 +73,9 @@ Analyse the frequency of trips taken by repeat passengers in each city (e.g., % 
 
 For each city, evaluate monthly performance against targets for total trips, new passengers, and average passenger ratings from targets_db. Determine if each metric met, exceeded, or missed the target, and calculate the percentage difference. Identify any consistent patterns in target achievement, particularly across tourism versus business-focused cities.
 
+![Monthly Target](https://github.com/user-attachments/assets/7b300892-26c5-4d95-904c-b5b88c1ddb13)
+![Monthly Target](https://github.com/user-attachments/assets/bb16163c-01ff-41bb-8463-df3fb8dc5a9b)
+
 
 
 Analyse the Repeat Passenger Rate (RPR%) for each city across the six-month period. Identify the top 2 and bottom 2 cities based on their RPR% to determine which locations have the strongest and weakest rates.
