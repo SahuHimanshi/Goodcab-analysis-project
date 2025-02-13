@@ -7,7 +7,7 @@ This project analyzes and provides strategic insights for Goodcabs, a rapidly gr
 
 Goodcabs, operating in 10 tier-2 cities, supports local drivers and aims to offer better experiences to passengers. With ambitious performance goals for 2024, the company needed immediate insights to drive data-driven decision-making and boost performance.
 
-Presentation: (https://www.canva.com/design/DAGefrRxsUg/qWyDdxt_rjj0scDQKihKrw/view?utm_content=DAGefrRxsUg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6c4ff0b3a8)
+📑 Project Presentation: Here
 
 
 📜 Problem Statement
