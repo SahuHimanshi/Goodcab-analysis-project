@@ -45,18 +45,18 @@ Derived key business insights to optimize performance, enhance customer satisfac
 Primary Analysis:
 Identify the top 3 and bottom 3 cities by total trips over the entire analysis period.
 
-![Top Product]!(https://github.com/user-attachments/assets/29dd1d51-8418-4f27-83b8-945e0f1d59e6)
-![Bottom product]!(https://github.com/user-attachments/assets/6dcb8aae-9cb1-489f-af16-e975cacbb3cd)
+![Top Product](https://github.com/user-attachments/assets/29dd1d51-8418-4f27-83b8-945e0f1d59e6)
+![Bottom product](https://github.com/user-attachments/assets/6dcb8aae-9cb1-489f-af16-e975cacbb3cd)
 
 Calculate the average fare per trip for each city and compare it with the city's average trip distance. Identify the cities with the highest and lowest average fare per trip to assess pricing efficiency across locations.
 
-![Average Fare]!(https://github.com/user-attachments/assets/08daa9b5-cd4b-4282-b664-ea305e95144d)
+![Average Fare](https://github.com/user-attachments/assets/08daa9b5-cd4b-4282-b664-ea305e95144d)
 
 Calculate the average passenger and driver ratings for each city, segmented by passenger type (new vs. repeat). Identify cities with the highest and lowest average ratings.
 
-![Average Rating]!(https://github.com/user-attachments/assets/a2516262-3b97-4f21-8908-725867e3fc78)
+![Average Rating](https://github.com/user-attachments/assets/a2516262-3b97-4f21-8908-725867e3fc78)
 
-![Average Rating]!(https://github.com/user-attachments/assets/c5959abe-0e40-458f-8cf1-dcb8798a1e27)
+![Average Rating](https://github.com/user-attachments/assets/c5959abe-0e40-458f-8cf1-dcb8798a1e27)
 
 For each city, identify the month with the highest total trips (peak demand) and the month with the lowest total trips (low demand). This analysis will help Goodcabs understand seasonal patterns and adjust resources accordingly.
 
