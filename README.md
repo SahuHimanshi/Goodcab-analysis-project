@@ -158,32 +158,29 @@ Query
 
 ```
 
+ WITH city_trip_data AS (
     SELECT 
-    c.city_name, 
-    ROUND((SUM(CASE WHEN drt.trip_count = 2 THEN drt.repeat_passenger_count ELSE 0 END) / 
-           (SELECT SUM(repeat_passenger_count) FROM dim_repeat_trip_distribution)) * 100, 2) AS '2_trips_%',
-    ROUND((SUM(CASE WHEN drt.trip_count = 3 THEN drt.repeat_passenger_count ELSE 0 END) / 
-           (SELECT SUM(repeat_passenger_count) FROM dim_repeat_trip_distribution)) * 100, 2) AS '3_trips_%',
-    ROUND((SUM(CASE WHEN drt.trip_count = 4 THEN drt.repeat_passenger_count ELSE 0 END) / 
-           (SELECT SUM(repeat_passenger_count) FROM dim_repeat_trip_distribution)) * 100, 2) AS '4_trips_%',
-    ROUND((SUM(CASE WHEN drt.trip_count = 5 THEN drt.repeat_passenger_count ELSE 0 END) / 
-           (SELECT SUM(repeat_passenger_count) FROM dim_repeat_trip_distribution)) * 100, 2) AS '5_trips_%',
-    ROUND((SUM(CASE WHEN drt.trip_count = 6 THEN drt.repeat_passenger_count ELSE 0 END) / 
-           (SELECT SUM(repeat_passenger_count) FROM dim_repeat_trip_distribution)) * 100, 2) AS '6_trips_%',
-    ROUND((SUM(CASE WHEN drt.trip_count = 7 THEN drt.repeat_passenger_count ELSE 0 END) / 
-           (SELECT SUM(repeat_passenger_count) FROM dim_repeat_trip_distribution)) * 100, 2) AS '7_trips_%',
-    ROUND((SUM(CASE WHEN drt.trip_count = 8 THEN drt.repeat_passenger_count ELSE 0 END) / 
-           (SELECT SUM(repeat_passenger_count) FROM dim_repeat_trip_distribution)) * 100, 2) AS '8_trips_%',
-    ROUND((SUM(CASE WHEN drt.trip_count = 9 THEN drt.repeat_passenger_count ELSE 0 END) / 
-           (SELECT SUM(repeat_passenger_count) FROM dim_repeat_trip_distribution)) * 100, 2) AS '9_trips_%',
-    ROUND((SUM(CASE WHEN drt.trip_count = 10 THEN drt.repeat_passenger_count ELSE 0 END) / 
-           (SELECT SUM(repeat_passenger_count) FROM dim_repeat_trip_distribution)) * 100, 2) AS '10_trips_%'
-FROM 
-    dim_repeat_trip_distribution drt
-INNER JOIN 
-    dim_city c ON c.city_id = drt.city_id
-GROUP BY 
-    drt.city_id, c.city_name;
+        drt.city_id,
+        c.city_name, 
+        drt.trip_count, 
+        drt.repeat_passenger_count,
+        SUM(drt.repeat_passenger_count) OVER (PARTITION BY drt.city_id) AS total_repeat_passenger_count
+    FROM dim_repeat_trip_distribution drt
+    INNER JOIN dim_city c ON c.city_id = drt.city_id
+)
+SELECT 
+    city_name,
+    ROUND((SUM(CASE WHEN trip_count = 2 THEN repeat_passenger_count ELSE 0 END) / MAX(total_repeat_passenger_count)) * 100, 2) AS "2_trips_%",
+    ROUND((SUM(CASE WHEN trip_count = 3 THEN repeat_passenger_count ELSE 0 END) / MAX(total_repeat_passenger_count)) * 100, 2) AS "3_trips_%",
+    ROUND((SUM(CASE WHEN trip_count = 4 THEN repeat_passenger_count ELSE 0 END) / MAX(total_repeat_passenger_count)) * 100, 2) AS "4_trips_%",
+    ROUND((SUM(CASE WHEN trip_count = 5 THEN repeat_passenger_count ELSE 0 END) / MAX(total_repeat_passenger_count)) * 100, 2) AS "5_trips_%",
+    ROUND((SUM(CASE WHEN trip_count = 6 THEN repeat_passenger_count ELSE 0 END) / MAX(total_repeat_passenger_count)) * 100, 2) AS "6_trips_%",
+    ROUND((SUM(CASE WHEN trip_count = 7 THEN repeat_passenger_count ELSE 0 END) / MAX(total_repeat_passenger_count)) * 100, 2) AS "7_trips_%",
+    ROUND((SUM(CASE WHEN trip_count = 8 THEN repeat_passenger_count ELSE 0 END) / MAX(total_repeat_passenger_count)) * 100, 2) AS "8_trips_%",
+    ROUND((SUM(CASE WHEN trip_count = 9 THEN repeat_passenger_count ELSE 0 END) / MAX(total_repeat_passenger_count)) * 100, 2) AS "9_trips_%",
+    ROUND((SUM(CASE WHEN trip_count = 10 THEN repeat_passenger_count ELSE 0 END) / MAX(total_repeat_passenger_count)) * 100, 2) AS "10_trips_%"
+FROM city_trip_data
+GROUP BY city_id, city_name;
 
 ```
 
